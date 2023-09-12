@@ -1,1 +1,88 @@
 # lore-creation
+
+- Singleton: allowing only a single entity to exist 
+	- analogy
+		- spoc (one point of contact for resolution)
+		- hookr (one entity serves many clients)
+		- orcestramaster (cordinates messages between many entities)
+		- bookkeeper (centralized handling of data)
+		- flight controller (centralized handling of notifications)
+	- eg: 
+		- db connnection pool
+		- user auth and session management
+		- logging
+		- caching
+		- object pooling /  Object Registry
+	- related design patterns:
+		- factory
+		- builder
+		
+- Factroy: interface for choosing what objects to create 
+	- analogy
+		- kiosk (interface for choosing options)
+		- mapper (interface for directing controle to objects)
+		- food menu (selecting options and their quantity)
+		- instantiate different object types that handle specific types of data
+	- eg:
+		- 0auth, jwt etc. login types (authentication providers)
+		- payment selection
+		- notification services (sms, email, push notification)
+		- database selection
+		- logger selection
+		- data conversion,file parser/generator selection, data parser selection
+		- report generation with selected charts
+		- input widget selection
+		- deployment to selected server
+	- related design patterns:
+		- singleton
+		- abstract factory
+		
+- Abatract factory: interface for choosing categories that has multiple options to choosing what objects to create (a set of dropdowns with options)
+	- analogy
+		- a set of dropdowns with options
+	- eg:
+		- i18n
+		- writing data to either db or fs or cloud where db drivers can be different, fs can be different format, could can be different providers
+		- Dependency Injection Containers		
+	- related design patterns:
+		- factory
+	
+- Builder: abstract away the steps needed to build and object
+	- analogy
+		- data pipelines, construct object properties by querying from a database, or requested through http, or calculated with a long running CPU process, or dependency
+		- creating objects from dependencies and side-effects		
+		- lazy initialization of objects
+		- like SQL Query Builder: build a query (object) from steps given by users/devs
+		- burger builder: get input from user on what layers should be present		
+		- abstracting away construction of complex objects/json from various steps
+		- abstracting object structure creation
+		- conditional object structure creation (optional members)
+	- eg:
+		- Email Template Builder
+		- Report Builder		
+		- constructing urls / Route Configuration Builder
+		- middleware
+	- related design patterns:
+		- singleton
+		- prototype
+	
+- Prototype: object that has ability to clone itself, assuming object's data wont become stale
+	- analogy
+		- clones
+		- document copies
+		- twins, siblings
+		- Prototype design pattern produces a cloneable object, can be used under following situations
+		- 1). when creating objects is expensive and the data held by the object wont go stale or stale data can be mitigated. the data held by the object might be queried from a database, or requested through http, or calculated with a long running CPU process, in such situations cloning an immutable object is beneficial but not at the expense of having stale data.
+		- 2). some times it might not be programmatically possible to recreate an object, like state objects or snapshots or DOM structures, you also wouldn't be able to mutate the original object because its shared and you cannot sensibly persist the object, in such situations cloning an immutable object is beneficial but not at the expense of having stale data.
+		- 3). you might want to have the exact copy of a dataset for testing on various different environments or when you need to have default values for object properties, cloning would help here.
+	- eg:
+		- using Object.create() in js
+		- virtual dom
+		- expensive objects; 
+		- state object
+		- DOM objects
+		- snapshots
+		- testing dataset
+		- object cloned by this method should be independent of the original object 
+	- related design patterns:
+		- builder
