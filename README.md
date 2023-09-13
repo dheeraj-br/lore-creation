@@ -43,7 +43,7 @@
 		- a set of dropdowns with options
 	- eg:
 		- i18n
-		- writing data to either db or fs or cloud where db drivers can be different, fs can be different format, could can be different providers
+		- writing data to either db or fs or cloud where db drivers can be different, fs can be different format, cloud can be different providers
 		- Dependency Injection Containers		
 	- related design patterns:
 		- factory
