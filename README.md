@@ -25,10 +25,10 @@
 		- food menu (selecting options and their quantity)
 		- instantiate different object types that handle specific types of data
 	- eg:
+		- database selection
 		- 0auth, jwt etc. login types (authentication providers)
 		- payment selection
 		- notification services (sms, email, push notification)
-		- database selection
 		- logger selection
 		- data conversion,file parser/generator selection, data parser selection
 		- report generation with selected charts
