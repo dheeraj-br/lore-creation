@@ -10,10 +10,10 @@
   		- connection pool (reusing objects that are expensive to create)
 	- eg: 
 		- db connnection pool
+		- object pooling /  Object Registry
 		- user auth and session management
 		- logging
 		- caching
-		- object pooling /  Object Registry
 	- related design patterns:
 		- factory
 		- builder
