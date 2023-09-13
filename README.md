@@ -3,10 +3,11 @@
 - Singleton: allowing only a single entity to exist 
 	- analogy
 		- spoc (one point of contact for resolution)
-		- hookr (one entity serves many clients)
+		- server (one entity serves many clients)
 		- orcestramaster (cordinates messages between many entities)
 		- bookkeeper (centralized handling of data)
 		- flight controller (centralized handling of notifications)
+  		- connection pool (reusing objects that are expensive to create)
 	- eg: 
 		- db connnection pool
 		- user auth and session management
